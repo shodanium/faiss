@@ -15,11 +15,15 @@
  *******************************************************/
 
 
+#ifdef FAISS_BUILD_SHARED
 #ifdef FAISS_MAIN_LIB
-#define FAISS_API __declspec(dllexport)
+#define FAISS_API __declspec(dllexport) // shared library itself
 #else // _FAISS_MAIN_LIB
-#define FAISS_API __declspec(dllimport)
+#define FAISS_API __declspec(dllimport) // shared library client
 #endif // FAISS_MAIN_LIB
+#else
+#define FAISS_API // static library
+#endif
 
 #define __PRETTY_FUNCTION__ __FUNCSIG__
 

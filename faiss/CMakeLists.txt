@@ -167,6 +167,9 @@ set_target_properties(faiss PROPERTIES
 
 if(WIN32)
   target_compile_definitions(faiss PRIVATE FAISS_MAIN_LIB)
+  if(BUILD_SHARED_LIBS)
+    target_compile_definitions(faiss PRIVATE FAISS_BUILD_SHARED)
+  endif()
 endif()
 
 target_compile_definitions(faiss PRIVATE FINTEGER=int)
