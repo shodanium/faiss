@@ -52,6 +52,7 @@ inline
 PQEncoder8::PQEncoder8(uint8_t *code, int nbits)
     : code(code) {
     assert(8 == nbits);
+    (void)nbits; // unused in release builds
 }
 
 inline
@@ -63,6 +64,7 @@ inline
 PQEncoder16::PQEncoder16(uint8_t *code, int nbits)
     : code((uint16_t *)code) {
     assert(16 == nbits);
+    (void)nbits; // unused in release builds
 }
 
 inline
@@ -116,6 +118,7 @@ PQDecoder8::PQDecoder8(const uint8_t *code, int nbitsarg)
     : code(code) {
     assert(8 == nbitsarg);
     assert(8 == nbits);
+    (void)nbitsarg; // unused in release builds
 }
 
 inline
@@ -129,6 +132,7 @@ PQDecoder16::PQDecoder16(const uint8_t *code, int nbitsarg)
     : code((uint16_t *)code) {
      assert(16 == nbitsarg);
      assert(16 == nbits);
+     (void)nbitsarg; // unused in release builds
 }
 
 inline
